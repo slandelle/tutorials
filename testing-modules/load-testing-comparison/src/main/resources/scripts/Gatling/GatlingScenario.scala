@@ -14,9 +14,11 @@ class RewardsScenario extends Simulation {
   val scn = scenario("RewardsScenario")
 	.repeat(1000){
 
+		exec(_.set("randCustId", randCustId()))
+
 		exec(http("transactions_add")
 		  .post("/transactions/add/")
-		  .body(StringBody(_ => s"""{"customerRewardsId":null,"customerId":${randCustId()},"transactionDate":null}""")).asJson
+		  .body(StringBody("""{"customerRewardsId":null,"customerId":${randCustId},"transactionDate":null}""")).asJson
 		.check(jsonPath("$.id").saveAs("txnId"))
 		.check(jsonPath("$.transactionDate").saveAs("txtDate"))
 		.check(jsonPath("$.customerId").saveAs("custId")))

@@ -9,10 +9,6 @@ public class Transaction {
     private Integer customerId;
     private Date transactionDate;
 
-    public Transaction(){
-        transactionDate = new Date(System.currentTimeMillis());
-    }
-
     public void setTransactionDate(Date transactionDate){
         this.transactionDate = transactionDate;
     }

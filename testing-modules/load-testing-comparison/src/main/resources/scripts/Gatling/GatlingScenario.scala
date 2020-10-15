@@ -9,7 +9,7 @@ class RewardsScenario extends Simulation {
 
   def randCustId() = java.util.concurrent.ThreadLocalRandom.current().nextInt()
   
-  val httpProtocol = http.baseUrl("http://localhost:8080")
+  val httpProtocol = http.baseUrl("http://alpha:8080")
   
   val scn = scenario("RewardsScenario")
 	.repeat(1000){

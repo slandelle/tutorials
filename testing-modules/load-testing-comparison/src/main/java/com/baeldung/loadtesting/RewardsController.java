@@ -14,11 +14,9 @@ import java.util.Optional;
 @RestController
 public class RewardsController {
 
-    @Autowired
-    private CustomerRewardsRepository customerRewardsRepository;
+    private CustomerRewardsRepository customerRewardsRepository = new CustomerRewardsRepository();
 
-    @Autowired
-    private TransactionRepository transactionRepository;
+    private TransactionRepository transactionRepository = new TransactionRepository();
 
     @PostMapping(path="/transactions/add")
     public @ResponseBody Transaction saveTransactions(@RequestBody Transaction trnsctn){
@@ -33,7 +31,7 @@ public class RewardsController {
     }
 
     @PostMapping(path="/rewards/add")
-    public @ResponseBody CustomerRewardsAccount addRewardsAcount(@RequestBody CustomerRewardsAccount body) {
+    public @ResponseBody CustomerRewardsAccount addRewardsAccount(@RequestBody CustomerRewardsAccount body) {
         Optional<CustomerRewardsAccount> acct = customerRewardsRepository.findByCustomerId(body.getCustomerId());
         return !acct.isPresent() ? customerRewardsRepository.save(body) : acct.get();
     }

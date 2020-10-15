@@ -81,8 +81,8 @@
     <properties>
         <rest-assured.version>3.3.0</rest-assured.version>
         <!-- plugins -->
-        <thin.version>1.0.22.RELEASE</thin.version>
-        <spring-boot.version>2.3.3.RELEASE</spring-boot.version>
+        <thin.version>1.0.25.RELEASE</thin.version>
+        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
         <aspectjweaver.version>1.9.1</aspectjweaver.version>
     </properties>
 
